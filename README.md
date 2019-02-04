@@ -7,3 +7,5 @@ install.packages("sloop")
 devtools::install_github("hadley/emo")
 install.packages("lobstr")
 
+Check if mine is accumulated or not
+
