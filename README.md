@@ -33,3 +33,23 @@ p + geom_path(data = states,aes(x = long, y = lat, group = group), color = "blac
 download.file("ftp://ftp.ncdc.noaa.gov/pub/data/ushcn/v2.5/ushcn.tavg.latest.raw.tar.gz", destfile = "/Users/ganghan/Desktop/585/STAT585_Lab1/average_temperature.tar.gz")
 untar('average_temperature.tar.gz')
 ```
+
+
+### the code for download and untar etc..
+
+download .gz file and open with tools available in R.
+```{r}
+download.file("ftp://ftp.ncdc.noaa.gov/pub/data/ushcn/v2.5/ushcn.tavg.latest.raw.tar.gz",destfile = "ushcn.tavg.latest.raw.tar.gz")
+untar("ushcn.tavg.latest.raw.tar.gz")
+```
+
+Check the number of files inside the file ushcn.tavg.latest.raw.tar.gz and the name of the file containing the temperature data of your hometowns or Fort Dodge, IA (please specify).
+
+```{r}
+library(dplyr)
+files <- list.files("ushcn.v2.5.5.20190206")
+cat('total number of files is', length(files))
+
+weather %>% filter(grepl("FORT DODGE", weather$NAME)) %>% select(`COUNTRY CODE `,`NETWORK CODE`,"ID PLACEHOLDERS (\"00\")","COOP ID" ) %>% paste(collapse = "") %>% grep(files) -> index
+files[index]
+```
