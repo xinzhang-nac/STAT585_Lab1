@@ -29,11 +29,6 @@ p + geom_path(data = states,aes(x = long, y = lat, group = group), color = "blac
 
 ```
 
-```{r}
-download.file("ftp://ftp.ncdc.noaa.gov/pub/data/ushcn/v2.5/ushcn.tavg.latest.raw.tar.gz", destfile = "/Users/ganghan/Desktop/585/STAT585_Lab1/average_temperature.tar.gz")
-untar('average_temperature.tar.gz')
-```
-
 
 ### the code for download and untar etc..
 
