@@ -57,7 +57,7 @@ library(dplyr)
 files <- list.files("ushcn.v2.5.5.20190206")
 cat('total number of files is', length(files))
 
-weather %>% filter(grepl("FORT DODGE", weather$NAME)) %>% select(`COUNTRY CODE `,`NETWORK CODE`,"ID PLACEHOLDERS (\"00\")","COOP ID" ) %>% paste(collapse = "") %>% grep(files) -> index
+weather %>% filter(grepl("FORT DODGE", weather$NAME)) %>% select(`COUNTRY CODE `,`NETWORK CODE`,`ID PLACEHOLDERS (\"00\")`,`COOP ID` ) %>% paste(collapse = "") %>% grep(files) -> index
 cat('The name of the file containing the temperature data of Fort Dodge, IA is',files[index])
 ```
 
