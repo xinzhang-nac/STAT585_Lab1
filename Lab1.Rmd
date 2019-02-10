@@ -2,7 +2,7 @@
 title: "Lab 1"
 author: "Xin Zhang"
 date: "2/4/2019"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -59,8 +59,11 @@ cat('total number of files is', length(files))
 
 weather %>% filter(grepl("FORT DODGE", weather$NAME)) %>% select(`COUNTRY CODE `,`NETWORK CODE`,`ID PLACEHOLDERS (\"00\")`,`COOP ID` ) %>% paste(collapse = "") %>% grep(files) -> index
 cat('The name of the file containing the temperature data of Fort Dodge, IA is',files[index])
+
+
+weather %>% filter(grepl("AMES", weather$NAME)) %>% select(`COUNTRY CODE `,`NETWORK CODE`,`ID PLACEHOLDERS (\"00\")`,`COOP ID` ) %>% paste(collapse = "") %>% grep(files) -> index
+cat('The name of the file containing the temperature data of Ames, IA is',files[index])
 ```
 
-There are 1218 files inside the gz file. The name of the file containing the temperature data of Fort Dodge is "USH00132999.raw.tavg"
 
 
