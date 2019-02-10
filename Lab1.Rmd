@@ -1,6 +1,6 @@
 ---
 title: "Lab 1"
-author: "Xin Zhang"
+author: "Team #2"
 date: "2/4/2019"
 output: pdf_document
 ---
